@@ -11,7 +11,7 @@ except ImportError:
 
 from libs.shape import Shape
 from libs.utils import distance
-
+import os
 CURSOR_DEFAULT = Qt.ArrowCursor
 CURSOR_POINT = Qt.PointingHandCursor
 CURSOR_DRAW = Qt.CrossCursor
@@ -585,7 +585,8 @@ class Canvas(QWidget):
         self.set_hiding(False)
         self.newShape.emit()
         self.update()
-
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("QTD: ",len(self.shapes))
     def close_enough(self, p1, p2):
         # d = distance(p1 - p2)
         # m = (p1-p2).manhattanLength()
