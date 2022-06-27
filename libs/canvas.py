@@ -586,7 +586,7 @@ class Canvas(QWidget):
         self.newShape.emit()
         self.update()
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("QTD: ",len(self.shapes))
+        print("Total of annotations: ",len(self.shapes))
     def close_enough(self, p1, p2):
         # d = distance(p1 - p2)
         # m = (p1-p2).manhattanLength()
